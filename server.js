@@ -1,7 +1,6 @@
 const http = require("http");
 const WebSocketServer = require("websocket").server;
-const PORT = process.env.PORT || 3000;
-const httpServer = http.createServer((req, res) => {}).listen(PORT);
+const httpServer = http.createServer((req, res) => {}).listen(5000);
 let WebSocket = new WebSocketServer({
     httpServer,
 });
@@ -14,6 +13,7 @@ const createId = () => {
     }
     return _p8() + _p8(true) + _p8(true) + _p8();
 };
+
 WebSocket.on("request", (request) => {
     let connection = request.accept(null, request.origin);
     let client = { connection };
